@@ -8,9 +8,11 @@ import { RealTimeModule } from './components/real_time/real_time.module';
 import { ChatModule } from './components/chat/chat.module';
 import { GithubModule } from './components/github/github.module';
 import { AiModule } from './components/ai/ai.module';
+import { DatabaseModule } from './components/database/database.module';
+import { RedisModule } from './components/redis/redis.module';
 
 @Module({
-  imports: [AuthModule, UsersModule, SessionsModule, GithubModule,RealTimeModule, ChatModule, AiModule],
+  imports: [AuthModule, UsersModule, SessionsModule, GithubModule,RealTimeModule, ChatModule, AiModule, DatabaseModule, RedisModule],
   controllers: [AppController,],
   providers: [AppService,],
 })
