@@ -10,9 +10,10 @@ import { GithubModule } from './components/github/github.module';
 import { AiModule } from './components/ai/ai.module';
 import { DatabaseModule } from './components/database/database.module';
 import { RedisModule } from './components/redis/redis.module';
+import { ConfigModule } from './components/config/config.module';
 
 @Module({
-  imports: [AuthModule, UsersModule, SessionsModule, GithubModule,RealTimeModule, ChatModule, AiModule, DatabaseModule, RedisModule],
+  imports: [AuthModule, UsersModule, SessionsModule, GithubModule,RealTimeModule, ChatModule, AiModule, DatabaseModule, RedisModule, ConfigModule],
   controllers: [AppController,],
   providers: [AppService,],
 })
