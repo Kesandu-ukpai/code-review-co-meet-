@@ -14,6 +14,12 @@ import { AuthConfig } from './auth.config';
 
                 JWT_ACCESS_SECRET: joi.string().required(),
                 JWT_REFRESH_SECRET: joi.string().required(),
+
+                DB_HOST: joi.string().required(),
+                DB_PORT: joi.number().required(),
+                DB_USERNAME: joi.string().required(),
+                DB_PASSWORD: joi.number().required(),
+                DB_NAME: joi.string().required(),
             })
         })
     ]
