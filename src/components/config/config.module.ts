@@ -18,7 +18,7 @@ import { AuthConfig } from './auth.config';
                 DB_HOST: joi.string().required(),
                 DB_PORT: joi.number().required(),
                 DB_USERNAME: joi.string().required(),
-                DB_PASSWORD: joi.number().required(),
+                DB_PASSWORD: joi.string().required(),
                 DB_NAME: joi.string().required(),
             })
         })
