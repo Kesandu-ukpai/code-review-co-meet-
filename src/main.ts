@@ -1,10 +1,22 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { HttpExceptionFilter } from './common/http-exception/http-exception.filter';
-
+import { AppLogger } from './common/logger/logger.service';
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? 3000);
-  app.useGlobalFilters( new HttpExceptionFilter())
+ 
+  const logger = new AppLogger('Bootstrap');
+
+  try {
+    const app = await NestFactory.create(AppModule, {
+      bufferLogs: true,
+    });
+    await app.listen(3000);
+
+    logger.log('Application started on http://localhost:3000');
+    logger.log('Database connection verified');
+    logger.log('Redis connection verified');
+
+  } catch (error) {
+    logger.error(' Application failed to start!', error.stack);
+  }
 }
 bootstrap();

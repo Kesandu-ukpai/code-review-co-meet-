@@ -1,8 +1,10 @@
 import { ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus } from '@nestjs/common';
 import { Response, Request } from 'express';
+import { AppLogger } from '../logger/logger.service';
 
 @Catch()
 export class HttpExceptionFilter<T> implements ExceptionFilter {
+  private readonly logger = new AppLogger('Exception')
   catch(exception: T, host: ArgumentsHost) {
     // exception = error, host = request details, but without context of where it's from
     const ctx = host.switchToHttp();
@@ -22,5 +24,7 @@ export class HttpExceptionFilter<T> implements ExceptionFilter {
       error: message,
       timestamp: new Date().toISOString(),
     });
+
+    this.logger.error(exception);
   }
 }
