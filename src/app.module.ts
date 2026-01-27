@@ -11,9 +11,10 @@ import { AiModule } from './components/ai/ai.module';
 import { DatabaseModule } from './components/database/database.module';
 import { RedisModule } from './components/redis/redis.module';
 import { ConfigModule } from './components/config/config.module';
+import { HealthModule } from './components/health/health.module';
 
 @Module({
-  imports: [AuthModule, UsersModule, SessionsModule, GithubModule,RealTimeModule, ChatModule, AiModule, DatabaseModule, RedisModule, ConfigModule],
+  imports: [AuthModule, UsersModule, SessionsModule, GithubModule,RealTimeModule, ChatModule, AiModule, DatabaseModule, RedisModule, ConfigModule, HealthModule],
   controllers: [AppController,],
   providers: [AppService,],
 })
