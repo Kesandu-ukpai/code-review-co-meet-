@@ -9,7 +9,6 @@ import { AuthConfig } from './auth.config';
             isGlobal: true,
             load: [AuthConfig],
             validationSchema: joi.object({
-                NODE_ENV: joi.string().valid('development', 'production').required(),
                 PORT: joi.number().default(3000),
 
                 JWT_ACCESS_SECRET: joi.string().required(),
