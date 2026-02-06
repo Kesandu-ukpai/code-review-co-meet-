@@ -40,6 +40,12 @@ As system complexity increases, create a production-grade foundation that won't 
 By the end of Week 1, the system boots cleanly, exposes clear operational signals, handles dependency failures gracefully, and is ready for higher-level features without architectural rework.
 
 
+## Week 2
+
+# Goal:
+A system that allows a user to authenticate using GitHub without managing passwords, while establishing a trusted internal identity.
+
+
 ## Stay in touch
 
 - Author - [Kesandu Ukpai](https://x.com/CodeByKesandu)
